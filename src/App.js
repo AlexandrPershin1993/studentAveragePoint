@@ -1,12 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-
+import { store } from './store';
 
 const App = () => {
   return (
-    <div>
-      fdfdf
-    </div>
+    <Provider store={store}>
+      <div>
+        fdfdf
+      </div>
+    </Provider>
   );
 }
 
