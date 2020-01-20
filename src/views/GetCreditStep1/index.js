@@ -47,7 +47,7 @@ const lengthSteps = useSelector(state => state.credit.lengthSteps);
               </legend>
               <Field 
                 name="nameObject"
-                format={value => {
+                parse={value => {
                   if(value) return value.replace(/[0-9]/g, '');
                 }}
               >
@@ -70,7 +70,7 @@ const lengthSteps = useSelector(state => state.credit.lengthSteps);
               </legend>
               <Field 
                 name="numberEstimation"
-                format={value => {
+                parse={value => {
                   if(value) return value.replace(/[^0-9]/g, '');
                 }}
               >
