@@ -1,0 +1,50 @@
+@import url('../../variables.css');
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: white;
+}
+
+.header1lvl {
+  margin: 0px;
+  padding: 0px;
+  font-size: var(--header1lvl-size);
+  font-weight: inherit;
+}
+
+.header2lvl {
+  font-size: var(--header2lvl-size);
+  font-weight: inherit;
+  text-align: center;
+}
+
+.legend {
+  font-size: var(--legend-size);
+  font-weight: inherit;
+}
+
+.select {
+  margin: 10px;
+  padding: 8px;
+  size: 20;
+  font-size: var(--input-size);
+}
+
+.field {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
