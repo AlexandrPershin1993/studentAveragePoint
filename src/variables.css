@@ -1,7 +1,10 @@
 body {
-  --header-size: 7rem;
-  --primary-button: #d5cff9;
-  --secondary-button: #e3b792;
+  --header1lvl-size: 2rem;
+  --header2lvl-size: 1.5rem;
+  --legend-size: 1.2rem;
+  --input-size: 1rem;
+  --primary-button: rgb(133, 149, 201);
+  --secondary-button: #dfa372;
   --primary-font: #282828;
   --secondary-font: #8281ab;
 }

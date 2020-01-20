@@ -1,0 +1,21 @@
+@import url('../../variables.css');
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 35px;
+  border: 0;
+  background-color: var(--primary-button);
+  font-size: 1.1rem;
+  font-weight: inherit;
+  border-radius: 2px;
+  transition-duration: 0.2s;
+}
+
+.button:hover {
+  background-color: var(--secondary-button);
+}
