@@ -2,9 +2,15 @@ import { typesCredit } from './actions';
 
 const initialState = {
   lengthSteps: 4,
-  data: {},
+  numberLessons: 30,
+  data: {
+    nameObject: '',
+    numberEstimation: 0
+  },
   arrayEstimation: [],
-  numberMissingLessons: 0
+  numberMissingLessons: 0,
+  statusLoadingDataUser: '',
+  step: 1
 };
 
 export const reducer = (state = initialState, action) => {
@@ -23,6 +29,18 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload
+      }
+    case typesCredit.SET_STATUS_LOADING_DATA_USER:
+      return {
+        ...state,
+        statusLoadingDataUser: action.payload
+      }
+    case typesCredit.TO_DO_RESET:
+      return initialState;
+    case typesCredit.SET_STEP:
+      return {
+        ...state,
+        step: action.payload
       }
     default:
       return state;

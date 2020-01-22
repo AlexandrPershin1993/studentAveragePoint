@@ -10,12 +10,15 @@ import { actionsCredit } from '../../state/credit/actions';
 const validatorEstimation = (number) => number > 0
 
 const GetCreditStep1 = () => {
-const dispatch = useDispatch();
-const onSubmit = (value) => {
-  dispatch(push('/2'));
-  dispatch(actionsCredit.setData(value));
-};
-const lengthSteps = useSelector(state => state.credit.lengthSteps);
+  const dispatch = useDispatch();
+  const onClick = (value) => {
+    dispatch(push('/2'));
+    dispatch(actionsCredit.setStep(2));
+    dispatch(actionsCredit.setData(value));
+  };
+
+  const lengthSteps = useSelector(state => state.credit.lengthSteps);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.header1lvl}> 
@@ -25,7 +28,7 @@ const lengthSteps = useSelector(state => state.credit.lengthSteps);
         Шаг 1 из {lengthSteps}
       </h2>
       <Form 
-        onSubmit={onSubmit}
+        onSubmit={onClick}
         validate={(values) => {
           const objError = {};
           if(!values.nameObject) {

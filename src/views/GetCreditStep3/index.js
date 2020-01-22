@@ -5,24 +5,23 @@ import { push } from 'connected-react-router';
 import styles from './index.module.css';
 import Button from '../../components/Button';
 import { actionsCredit } from '../../state/credit/actions';
+import { createArrayComponents } from '../../utils/component';
 
 const GetCreditStep3 = () => {
   const dispatch = useDispatch();
-  const onSubmit = (value) => {
+  const onClick = (value) => {
     dispatch(push('/4'));
+    dispatch(actionsCredit.setStep(4));
     dispatch(actionsCredit.setNumberMissingLessons(value.numberMissingLessons));
   };
-  const numberLessons = 30;
+  const numberLessons = useSelector(state => state.credit.numberLessons);
   const lengthSteps = useSelector(state => state.credit.lengthSteps);
-  const arrayOption = [];
 
-  for(let i = 0; i <= numberLessons; i++) {
-    arrayOption.push(
-      <option name={i} key={i}>
-        {i}
-      </option>
-    )
-  }
+  const arrayOption = createArrayComponents(numberLessons + 1, (i) => (
+    <option name={i} key={i}>
+      {i}
+    </option>
+  ))
 
   return (
     <div className={styles.container}>
@@ -33,7 +32,7 @@ const GetCreditStep3 = () => {
         Шаг 3 из {lengthSteps} <br />
         По этому предмету у вас {numberLessons} занятий
       </h2>
-      <Form onSubmit={onSubmit} initialValues={{numberMissingLessons: 0}}>
+      <Form onSubmit={onClick} initialValues={{numberMissingLessons: 0}}>
         {({handleSubmit, ...props}) => (
           <form className={styles.form}>
             <div className={styles.field}>
