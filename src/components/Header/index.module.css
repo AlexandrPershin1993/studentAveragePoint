@@ -1,0 +1,17 @@
+@import url('../../variables.css');
+
+.header {
+  text-align: center;
+}
+
+.header1lvl {
+  margin: 0px;
+  padding: 0px;
+  font-size: var(--header1lvl-size);
+  font-weight: inherit;
+}
+
+.header2lvl {
+  font-size: var(--header2lvl-size);
+  font-weight: inherit;
+}

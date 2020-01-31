@@ -1,0 +1,6 @@
+.inputText {
+  margin: 10px;
+  padding: 8px;
+  size: 20;
+  font-size: var(--input-size);
+}

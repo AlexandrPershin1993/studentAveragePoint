@@ -1,0 +1,11 @@
+.legend {
+  font-size: var(--legend-size);
+  font-weight: inherit;
+}
+
+.field {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
