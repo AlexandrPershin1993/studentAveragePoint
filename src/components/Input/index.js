@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorMessage from '../../../components/ErrorMessage';
+import ErrorMessage from '../ErrorMessage';
 import styles from './index.module.css';  
 
 const Input = ({meta:{error, touched}, placeholder, input}) =>(

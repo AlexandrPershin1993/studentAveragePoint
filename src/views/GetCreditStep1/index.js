@@ -5,9 +5,10 @@ import { push } from 'connected-react-router';
 import styles from './index.module.css';
 import Button from '../../components/Button';
 import { actionsCredit } from '../../state/credit/actions';
-import Input from './Input';
+import Input from '../../components/Input';
 import ElementForm from './ElementForm';
 import Header from '../../components/Header';
+import { createInput } from '../../utils/component';
 
 const validatorEstimation = (number) => number > 0;
 
@@ -31,10 +32,6 @@ const parseInputNameObject = value => {
 const parseInputNumberEstimation = value => {
   if(value) return value.replace(/[^0-9]/g, '');
 }
-
-const createInput = placeholder => Component => props => (
-  <Component {...props} placeholder={placeholder} />
-);
 
 const inputNameObject = createInput('Введите наименование') (Input);
 
@@ -68,10 +65,11 @@ const GetCreditStep1 = () => {
   const onClickCallback = useCallback(onClick, []);
 
   const lengthSteps = useSelector(state => state.credit.lengthSteps);
+  const step = useSelector(state => state.credit.step);
 
   return (
     <div className={styles.container}>
-      <Header lengthSteps={lengthSteps}/>
+      <Header step={step} lengthSteps={lengthSteps}/>
       <Form 
         onSubmit={onClickCallback}
         validate={validatorForm}
