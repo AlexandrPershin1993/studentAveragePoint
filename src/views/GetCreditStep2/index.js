@@ -61,7 +61,7 @@ const GetCreditStep2 = () => {
     </form>
   );
 
-  const formCallback = useCallback(form, [lengthEstimation]);
+  const formCallback = useCallback(form, [arrayInputEstimationMemo]);
 
   return (
     <div className={styles.container}>
