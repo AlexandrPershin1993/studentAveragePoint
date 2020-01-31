@@ -1,9 +1,10 @@
 import React from 'react';
 
 export const createArrayComponents = (count, func, array = [], iter = 0) => {
-  if(count <= iter) return array;
-  array.push(func(iter));
-  return createArrayComponents(count, func, array, ++iter);
+  const newArray = [...array];
+  if(count <= iter) return newArray;
+  newArray.push(func(iter));
+  return createArrayComponents(count, func, newArray, ++iter);
 };
 
 export const createInput = placeholder => Component => props => (
